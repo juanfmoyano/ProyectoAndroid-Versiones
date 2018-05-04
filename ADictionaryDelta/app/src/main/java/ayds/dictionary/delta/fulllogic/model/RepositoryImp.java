@@ -18,7 +18,7 @@ class RepositoryImp implements Repository {
     }
 
     public String searchTerm(String term) {
-        String meaning=null;
+        String meaning = null;
         try {
             checkFormat(term);
             meaning = dataBaseHelper.getMeaning(term);
@@ -30,7 +30,7 @@ class RepositoryImp implements Repository {
                 meaning = service.getMeaning(term);
                 dataBaseHelper.saveTerm(meaning, term);
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             handler.handleException(e);
         }
         return meaning;

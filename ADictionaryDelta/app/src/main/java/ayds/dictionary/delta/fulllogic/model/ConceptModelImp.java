@@ -16,7 +16,7 @@ class ConceptModelImp implements ConceptModel {
         conceptListener = listener;
     }
 
-    public void addErrorListener (ErrorListener listener){
+    public void addErrorListener(ErrorListener listener) {
         setHandlerListener(listener);
     }
 
@@ -25,7 +25,8 @@ class ConceptModelImp implements ConceptModel {
             @Override
             public void run() {
                 String meaning = searchTermOnRepository(term);
-                notifyListenerConceptModel(meaning, term);
+                if (meaning != null)
+                    notifyListenerConceptModel(meaning, term);
             }
         }).start();
     }
@@ -37,11 +38,11 @@ class ConceptModelImp implements ConceptModel {
         }
     }
 
-    private String searchTermOnRepository(String term){
+    private String searchTermOnRepository(String term) {
         return repository.searchTerm(term);
     }
 
-    private void setHandlerListener(ErrorListener listener){
+    private void setHandlerListener(ErrorListener listener) {
         ModuleExceptions.getInstance().getHandler().setListener(listener);
     }
 

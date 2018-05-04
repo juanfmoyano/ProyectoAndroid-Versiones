@@ -39,7 +39,7 @@ public class ServiceImp implements Service {
         } catch (IOException e1) {
             throw new ConnectionErrorException();
         } catch (Exception e1){
-            throw new Exception();
+            throw e1;
         }
         return meaning;
     }
