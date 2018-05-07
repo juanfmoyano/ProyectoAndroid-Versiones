@@ -24,6 +24,6 @@ class DataBaseHelperImp implements DataBaseHelper {
     }
 
     public void saveTerm(String meaning, String term) {
-        DataBase.saveTerm(meaning, term);
+        DataBase.saveTerm(term,meaning);
     }
 }

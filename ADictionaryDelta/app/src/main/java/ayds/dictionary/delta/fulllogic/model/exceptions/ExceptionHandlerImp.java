@@ -9,7 +9,7 @@ class ExceptionHandlerImp implements ExceptionHandler {
         String exceptionMessage;
 
         if(e instanceof CustomizedException)
-            exceptionMessage = ((CustomizedException) e).getMessageError();
+            exceptionMessage = e.getMessage();
 
         else
             exceptionMessage = "An unexpected error occurred. Please try your request again later";

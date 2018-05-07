@@ -23,7 +23,6 @@ class RepositoryImp implements Repository {
             checkFormat(term);
             meaning = dataBaseHelper.getMeaning(term);
             final String prefixExistsInDb = "[*]";
-
             if (meaning != null) { // exists in db
                 meaning = prefixExistsInDb + meaning;
             } else {

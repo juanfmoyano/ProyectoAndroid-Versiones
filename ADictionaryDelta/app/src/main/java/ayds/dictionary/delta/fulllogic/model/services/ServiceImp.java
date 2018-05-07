@@ -28,6 +28,9 @@ public class ServiceImp implements Service {
     public String getMeaning(String term) throws Exception {
         String meaning;
         Response<String> callResponse;
+        //SAcar el try catch
+        El catch lo hace el repositori
+                Devuelve un string vacio o nulo, lo chequeo en el repo
         try {
             callResponse = wikiAPI.getTerm(term).execute();
             meaning = callResponse.body();
