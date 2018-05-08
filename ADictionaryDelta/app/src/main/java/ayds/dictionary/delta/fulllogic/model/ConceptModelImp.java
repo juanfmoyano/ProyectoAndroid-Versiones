@@ -31,7 +31,6 @@ class ConceptModelImp implements ConceptModel {
         }).start();
     }
 
-
     private void notifyListenerConceptModel(String meaning, String term) {
         if (conceptListener != null) {
             conceptListener.didUpdateTerm(meaning, term);
@@ -45,5 +44,4 @@ class ConceptModelImp implements ConceptModel {
     private void setHandlerListener(ErrorListener listener) {
         ModuleExceptions.getInstance().getHandler().setListener(listener);
     }
-
 }

@@ -22,7 +22,7 @@ public class ServiceImp implements Service {
                 .baseUrl("http://words.bighugelabs.com/api/2/")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
-       wikiAPI = retrofit.create(WordsBighugelabsAPI.class);
+        wikiAPI = retrofit.create(WordsBighugelabsAPI.class);
     }
 
     public String getMeaning(String term) throws Exception {
@@ -30,7 +30,7 @@ public class ServiceImp implements Service {
         Response<String> callResponse;
         //SAcar el try catch
         El catch lo hace el repositori
-                Devuelve un string vacio o nulo, lo chequeo en el repo
+        Devuelve un string vacio o nulo, lo chequeo en el repo
         try {
             callResponse = wikiAPI.getTerm(term).execute();
             meaning = callResponse.body();

@@ -5,7 +5,7 @@ import ayds.dictionary.delta.fulllogic.model.listeners.ErrorListener;
 class ExceptionHandlerImp implements ExceptionHandler {
     private ErrorListener errorListener;
 
-     public void handleException(Exception e){
+    public void handleException(Exception e){
         String exceptionMessage;
 
         if(e instanceof CustomizedException)
@@ -23,7 +23,6 @@ class ExceptionHandlerImp implements ExceptionHandler {
     }
 
     public void setListener(ErrorListener errorListener){
-         this.errorListener=errorListener;
+        this.errorListener=errorListener;
     }
-
 }

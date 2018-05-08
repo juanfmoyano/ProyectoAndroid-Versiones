@@ -18,11 +18,9 @@ import ayds.dictionary.delta.fulllogic.model.ModelModule;
 
 
 public class MainActivity extends AppCompatActivity {
-
     private EditText wordField;
     private Button goButton;
     private TextView resultPane;
-
     private MeaningController meaningController;
     private ConceptModel conceptModel;
     private TextConverterHelper textConverterHelper = new TextConverterHelperImp();
@@ -31,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initializeAttributes();
-
         goButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
                 }).start();
             }
         });
-
         conceptModel.addConceptListener(new ConceptModelListener() {
             @Override
             public void didUpdateTerm(String meaning, String term) {
@@ -56,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-
         conceptModel.addErrorListener(new ErrorListener() {
             @Override
             public void didErrorOcurr(String message) {
@@ -74,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
         this.setApplicationContext();
         meaningController = getController();
         conceptModel = getConceptModel();
-
         setContentView(R.layout.activity_main);
         wordField = findViewById(R.id.wordField);
         goButton = findViewById(R.id.goButton);
@@ -108,6 +102,4 @@ public class MainActivity extends AppCompatActivity {
     private String transformMeaningAndTerm(String meaning, String term){
         return textConverterHelper.textToHTML(meaning, term);
     }
-
-
 }
